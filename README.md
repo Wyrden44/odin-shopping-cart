@@ -1,12 +1,14 @@
-# odin-restaurant-page
-## Odin - Project {nr}: {title}
+# odin-shopping-cart
+## Odin - Project 16: Shopping Cart
 
-{info}
+This is a fully fledged demo store where you browse products and put them into a shopping cart.
+
+This project is for practicing Client-side Rendering with React Router, fetching data in React, styling React applications and React testing.
 
 ## General Info
-Date: {date}
+Date: 19.09.25
 
-Hours Working per Day: {hw}
+Hours Working per Day: 2
 
 Finish: {date}
 
@@ -23,4 +25,4 @@ Javascript Course: ✅ Complete
 
 Advanced HTML and CSS: ✅ Complete
 
-React: {p%}
+React: 80%
