@@ -9,7 +9,7 @@ export default function Nav() {
                 <Link to="shop">Shop</Link>
             </ul>
             <div className="shopping-cart">
-                <Link to="cart"><img src="../../public/images/shopping-cart.png"></img></Link>
+                <Link to="cart"><img src="/images/shopping-cart.png"></img></Link>
             </div>
         </nav>
     )
