@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <Nav />
+			<Footer />
     </>
   )
 }

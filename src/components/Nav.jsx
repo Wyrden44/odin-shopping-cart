@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Nav() {
     return (
-        <div className="nav">
+        <nav className="nav">
             <div className="logo"></div>
             <ul className="links">
                 <Link to="home">Home</Link>
@@ -11,6 +11,6 @@ export default function Nav() {
             <div className="shopping-cart">
                 <Link to="cart"><img src="../../public/images/shopping-cart.png"></img></Link>
             </div>
-        </div>
+        </nav>
     )
 }
