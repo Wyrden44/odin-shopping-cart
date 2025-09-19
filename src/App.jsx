@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import Nav from './components/Nav';
+
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState({}); // id: {amount}
@@ -6,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello World!</h1>
+      <Nav />
     </>
   )
 }
