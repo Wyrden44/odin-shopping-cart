@@ -5,11 +5,11 @@ export default function Nav() {
         <nav className="nav">
             <div className="logo"></div>
             <ul className="links">
-                <Link to="home">Home</Link>
-                <Link to="shop">Shop</Link>
+                <li><Link to="home">Home</Link></li>
+                <li><Link to="shop">Shop</Link></li>
             </ul>
             <div className="shopping-cart">
-                <Link to="cart"><img src="/images/shopping-cart.png"></img></Link>
+                <Link to="cart"><img id="cart-img" src="/images/shopping-cart.png"></img></Link>
             </div>
         </nav>
     )
