@@ -43,6 +43,11 @@
     align-items: center;
 }
 
+.shopping-cart > * {
+    display: flex;
+    align-items: center;
+}
+
 #cart-img {
     width: 30px;
     height: 30px;
