@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-bottom: 2px solid black;
 }
 
@@ -25,9 +25,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 
     list-style-type: none;
+}
+
+.links > li {
+    position: relative;
+}
+
+.links > li::after {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(0.1rem);
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    opacity: 0;
+
+    transition: opacity 0.3s;
+}
+
+.links > li:hover::after {
+    opacity: 1;
 }
 
 .links > li > * {
@@ -49,8 +71,8 @@
 }
 
 #cart-img {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
 }
 
 /* end nav */
