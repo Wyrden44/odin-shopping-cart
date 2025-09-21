@@ -28,6 +28,6 @@ function useProducts(url) {
             .then((data) => setProducts(data));
     }, [url]);        
 
-    console.log(products)
+    console.log("P", products);
     return products;
 }
