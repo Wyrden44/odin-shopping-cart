@@ -6,15 +6,16 @@ export default function Home() {
     return (
         <div className="home">
             <div className="banner">
-                <div className="home-heading">
-                    <h1>Everything you want</h1>
-                    <h1>All in one place</h1>
+                <div className="left">
+                    <div className="home-heading">
+                        <h1>Everything you want</h1>
+                        <h1>All in one place</h1>
+                    </div>
+                    <Link id="shop-now" to={"../shop"}>Shop Now</Link>
                 </div>
-                <Link id="shop-now" to={"../shop"}>Shop Now</Link>
-            </div>
-            <div className="featured">
-                <h1>Featured</h1>
-                <ProductCard product={randomProduct} />
+                <div className="right">
+                    <ProductCard product={randomProduct} />
+                </div>
             </div>
         </div>
     )
