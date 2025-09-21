@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
 import { loadProducts } from "../mockDataLoader";
 import ProductCard from "./products/ProductCard";
-
-const url = "https://fakestoreapi.com/products";
+import { useOutletContext } from "react-router-dom";
 
 export default function Shop() {
-    const products = useProducts(url);
+    const [products, _] = useOutletContext();
 
     return (
         <div className="shop">
@@ -17,17 +16,4 @@ export default function Shop() {
             </div>
         </div>
     )
-}
-
-function useProducts(url) {
-    const [products, setProducts] = useState([]);
-    
-    useEffect(() => {
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => setProducts(data));
-    }, [url]);        
-
-    console.log("P", products);
-    return products;
 }
