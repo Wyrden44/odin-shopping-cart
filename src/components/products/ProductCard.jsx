@@ -1,10 +1,10 @@
 export default function ProductCard({ product }) {
     return (
         <div className="product">
-            <img src={product.img} alt="product image" />
+            <div className="product-image"><img src={product.image} alt="product image" /></div>
             <div className="info">
                 <div className="info-header">
-                    <h3>{product.name}</h3>
+                    <h3>{product.title}</h3>
                     <p>{product.price}</p>
                 </div>
                 <p>{product.description}</p>

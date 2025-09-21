@@ -2,22 +2,10 @@ import { useEffect, useState } from "react"
 import { loadProducts } from "../mockDataLoader";
 import ProductCard from "./products/ProductCard";
 
+const url = "https://fakestoreapi.com/products";
+
 export default function Shop() {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        async function load() {
-            try {
-                const loadedProducts = await loadProducts();
-                console.log(loadedProducts)
-                setProducts(loadedProducts);   
-            } catch (error) {
-                console.log("Error in data loading:", error);
-            }
-        }
-        load();
-    }, []);
-
+    const products = useProducts(url);
 
     return (
         <div className="shop">
@@ -29,4 +17,17 @@ export default function Shop() {
             </div>
         </div>
     )
+}
+
+function useProducts(url) {
+    const [products, setProducts] = useState([]);
+    
+    useEffect(() => {
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => setProducts(data));
+    }, [url]);        
+
+    console.log(products)
+    return products;
 }
