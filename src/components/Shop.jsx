@@ -21,9 +21,12 @@ export default function Shop() {
 
     return (
         <div className="shop">
-            {products.map(product =>
-                <ProductCard product={product} />
-            )}
+            <h1>Shop</h1>
+            <div className="products">
+                {products.map(product =>
+                    <ProductCard product={product} />
+                )}
+            </div>
         </div>
     )
 }
