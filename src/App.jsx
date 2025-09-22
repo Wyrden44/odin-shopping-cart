@@ -7,8 +7,7 @@ const url = "https://fakestoreapi.com/products";
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState({}); // id: {amount}
-	const products = useProducts(url);
-  const randomProduct = useState(products[Math.floor(Math.random()*products.length)]);
+	const  [products, randomProduct] = useProducts(url);
 
   return (
     <>
@@ -31,7 +30,7 @@ function useProducts(url) {
     }, [url]);        
 
     console.log("P", products);
-    return products;
+    return [products, products[Math.floor(Math.random()*products.length)]];
 }
 
 export default App

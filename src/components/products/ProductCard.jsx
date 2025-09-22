@@ -1,4 +1,9 @@
 export default function ProductCard({ product }) {
+    if (product == null) {
+        return (
+            <></>
+        )
+    }
     return (
         <div className="product">
             <div className="product-image"><img src={product.image} alt="product image" /></div>
