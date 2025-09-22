@@ -14,7 +14,6 @@ export function useProducts(url) {
 }
 
 export async function getProduct(productId) {
-    let product = {}
     console.log("PID", productId)
     return fetch(`https://fakestoreapi.com/products/${productId}`)
         .then((res) => res.json())
