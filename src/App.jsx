@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
+import { useProducts } from './fetcher';
 
 const url = "https://fakestoreapi.com/products";
 
@@ -18,19 +19,6 @@ function App() {
 			<Footer />
     </>
   )
-}
-
-function useProducts(url) {
-    const [products, setProducts] = useState([]);
-    
-    useEffect(() => {
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => setProducts(data));
-    }, [url]);        
-
-    console.log("P", products);
-    return [products, products[Math.floor(Math.random()*products.length)]];
 }
 
 export default App
