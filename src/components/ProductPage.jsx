@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { getProduct } from "../fetcher";
 import ProductCard from "./products/ProductCard";
+import { getSingleProduct } from "../mockDataLoader";
 
 export async function loader({ params }) {
     const product = await getProduct(params.productId);
@@ -9,8 +10,22 @@ export async function loader({ params }) {
 
 export default function ProductPage() {
     const { product } = useLoaderData();
-    console.log("D", product);
+
     return (
-        <ProductCard product={product} />
+        <div className="product-page-card">
+            <button className="back-to-shop">&lt;</button>
+            <div className="product-images">
+                <img src={product.image} alt="Product Image" />
+            </div>
+            <div className="product-info">
+                <h1>{product.title}</h1>
+                <p>{product.description}</p>
+                <p id="product-price">{product.price}</p>
+            </div>
+            <div className="product-actions">
+                <input type="number" name="amount" id="product-amount" value={1} />
+                <button>Put in Cart</button>
+            </div>
+        </div>
     );
 }
