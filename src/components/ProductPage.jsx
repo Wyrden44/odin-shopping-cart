@@ -1,7 +1,8 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { getProduct } from "../fetcher";
 import ProductCard from "./products/ProductCard";
 import { getSingleProduct } from "../mockDataLoader";
+import { useState } from "react";
 
 export async function loader({ params }) {
     const product = await getProduct(params.productId);
@@ -10,10 +11,12 @@ export async function loader({ params }) {
 
 export default function ProductPage() {
     const { product } = useLoaderData();
+    const [amount, setAmount] = useState(1);
+    const navigate = useNavigate();
 
     return (
         <div className="product-page">
-            <button className="back-to-shop">&lt;</button>
+            <button className="back-to-shop" onClick={() => navigate(-1)}>&lt;</button>
             <div className="product-page-card">
                 <div className="product-images">
                     <img src={product.image} alt="Product Image" />
@@ -23,7 +26,7 @@ export default function ProductPage() {
                     <p>{product.description}</p>
                     <p id="product-price">{product.price}$</p>
                     <div className="product-actions">
-                        <input type="number" name="amount" id="product-amount" value={1} />
+                        <input onChange={(e) => setAmount(e.target.value)} min="1" max="100" type="number" name="amount" id="product-amount" value={amount} />
                         <button>Put in Cart</button>
                     </div>
                 </div>
