@@ -14,9 +14,8 @@ export default function ProductCard({ product }) {
             <div className="info">
                 <div className="info-header">
                     <h3>{product.title}</h3>
-                    <p>{product.price}</p>
+                    <p>{product.price}$</p>
                 </div>
-                <p>{product.description}</p>
             </div>
         </div>
     )
