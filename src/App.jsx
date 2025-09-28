@@ -17,8 +17,6 @@ function App() {
     ])
   }
 
-  console.log("CART: ", shoppingCart)
-
   return (
     <>
       <Nav numProducts={shoppingCart.length} />

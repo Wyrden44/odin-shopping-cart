@@ -67,6 +67,7 @@
     display: flex;
     justify-content: right;
     align-items: center;
+    position: relative;
 }
 
 .shopping-cart > * {
@@ -77,6 +78,22 @@
 #cart-img {
     width: 28px;
     height: 28px;
+}
+
+.num-cart-products {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #d6546a;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transform: translate(30%, -30%);
 }
 
 /* end nav */
