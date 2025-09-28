@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { Form, redirect, useLoaderData, useNavigate, useOutletContext } from "react-router-dom";
 import { getProduct } from "../fetcher";
 import ProductCard from "./products/ProductCard";
 import { getSingleProduct } from "../mockDataLoader";
@@ -9,9 +9,17 @@ export async function loader({ params }) {
     return { product };
 }
 
+export async function addToCart({ request, params }) {
+    const formData = await request.formData();
+    const updates = Object.fromEntries(formData);
+    console.log("u2", updates)
+    await addProductToCart(params.productId, updates.amount);
+}
+
 export default function ProductPage() {
     const { product } = useLoaderData();
     const [amount, setAmount] = useState(1);
+    const [_, __, ___, updateShoppingCart] = useOutletContext();
     const navigate = useNavigate();
 
     return (
@@ -27,7 +35,7 @@ export default function ProductPage() {
                     <p id="product-price">{product.price}$</p>
                     <div className="product-actions">
                         <input onChange={(e) => setAmount(e.target.value)} min="1" max="100" type="number" name="amount" id="product-amount" value={amount} />
-                        <button>Put in Cart</button>
+                        <button onClick={() => updateShoppingCart(product.id, amount)}>Put in Cart</button>
                     </div>
                 </div>
             </div>
