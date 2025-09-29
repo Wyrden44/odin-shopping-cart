@@ -19,7 +19,7 @@ export async function addToCart({ request, params }) {
 export default function ProductPage() {
     const { product } = useLoaderData();
     const [amount, setAmount] = useState(1);
-    const [_, __, ___, updateShoppingCart] = useOutletContext();
+    const [, , , updateShoppingCart] = useOutletContext();
     const navigate = useNavigate();
 
     return (

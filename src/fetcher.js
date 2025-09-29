@@ -9,12 +9,20 @@ export function useProducts(url) {
             .then((data) => setProducts(data));
     }, [url]);        
 
-    console.log("P", products);
     return [products, products[Math.floor(Math.random()*products.length)]];
 }
 
+export function useProduct(productId) {
+    const [product, setProduct] = useState(null);
+    
+    useEffect(() => {
+        getProduct(productId).then((data) => setProduct(data));
+    }, [productId]);
+
+    return product; 
+}
+
 export async function getProduct(productId) {
-    console.log("PID", productId)
     return fetch(`https://fakestoreapi.com/products/${productId}`)
         .then((res) => res.json())
         .then((data) => data);

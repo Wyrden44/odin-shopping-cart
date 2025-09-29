@@ -7,19 +7,19 @@ import { useProducts } from './fetcher';
 const url = "https://fakestoreapi.com/products";
 
 function App() {
-  const [shoppingCart, setShoppingCart] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState({});
 	const  [products, randomProduct] = useProducts(url);
 
   function updateShoppingCart(productId, amount) {
-    setShoppingCart([
+    setShoppingCart({
       ...shoppingCart,
-      { [productId]: amount }
-    ])
+      [productId]: amount,
+    });
   }
 
   return (
     <>
-      <Nav numProducts={shoppingCart.length} />
+      <Nav numProducts={Object.keys(shoppingCart).length} />
 			<section className="main">
 				<Outlet context={[products, randomProduct, shoppingCart, updateShoppingCart]} />
 			</section>

@@ -11,7 +11,7 @@ export default function Shop() {
             <h1>Shop</h1>
             <div className="products">
                 {products.map(product =>
-                    <ProductCard product={product} />
+                    <ProductCard product={product} key={product.id} />
                 )}
             </div>
         </div>
