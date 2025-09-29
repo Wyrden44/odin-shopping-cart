@@ -22,6 +22,12 @@ export default function ProductPage() {
     const [, , , updateShoppingCart] = useOutletContext();
     const navigate = useNavigate();
 
+    function updateProductAmount(newAmount) {
+        if (newAmount > 0 && newAmount <= 100) {
+            setAmount(newAmount);
+        }
+    }
+
     return (
         <div className="product-page">
             <button className="back-to-shop" onClick={() => navigate(-1)}>&lt;</button>
@@ -34,7 +40,7 @@ export default function ProductPage() {
                     <p>{product.description}</p>
                     <p id="product-price">{product.price}$</p>
                     <div className="product-actions">
-                        <input onChange={(e) => setAmount(e.target.value)} min="1" max="100" type="number" name="amount" id="product-amount" value={amount} />
+                        <input onChange={(e) => updateProductAmount(e.target.value)} min="1" max="100" type="number" name="amount" id="product-amount" value={amount} />
                         <button onClick={() => updateShoppingCart(product.id, amount)}>Put in Cart</button>
                     </div>
                 </div>

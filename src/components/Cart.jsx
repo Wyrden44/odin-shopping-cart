@@ -29,6 +29,12 @@ export default function Cart() {
 
     }, [shoppingCart]);
 
+    function updateProductAmount(productId, newAmount) {
+        if (newAmount > 0 && newAmount <= 100) {
+            udpateShoppingCart(productId, newAmount)
+        }
+    }
+
     if (Object.keys(shoppingCart).length == 0) {
         return (
             <>
@@ -46,7 +52,7 @@ export default function Cart() {
                 <ul className="cart-products">
                     {Object.keys(shoppingCart).map((productId) => {
                         return <li className="list-cart-product" key={productId}>
-                            <CartProduct product={products[productId]} amount={shoppingCart[productId]} onChange={(newAmount) => udpateShoppingCart(productId, newAmount)} onRemoveClick={() => deleteFromCart(productId)}/>
+                            <CartProduct product={products[productId]} amount={shoppingCart[productId]} onChange={(newAmount) => updateProductAmount(productId, newAmount)} onRemoveClick={() => deleteFromCart(productId)}/>
                         </li>
                     })}
                 </ul>
