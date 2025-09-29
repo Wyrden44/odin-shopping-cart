@@ -13,12 +13,10 @@ export default function CartProduct({ productId, amount, onChange }) {
 
     return (
         <div className="cart-product">
-            <div onClick={() => navigate(`../product/${product.id}`)} className="cart-product-image"><img src={product.image} alt="product image" /></div>
+            <img src={product.image} alt="product image" onClick={() => navigate(`../product/${product.id}`)} className="cart-product-image" />
             <div className="cart-product-info">
-                <div className="cart-product-info-header">
-                    <h3>{product.title}</h3>
-                    <p>{product.price}$</p>
-                </div>
+                <h3>{product.title}</h3>
+                <p>{product.price}$</p>
             </div>
             <div className="cart-product-actions">
                 <input type="number" name="cart-product-amount" value={amount} onChange={(e) => onChange(e.target.value)}/>
