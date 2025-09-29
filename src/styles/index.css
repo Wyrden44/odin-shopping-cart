@@ -252,12 +252,15 @@
     height: 100vh;
 }
 
+<<<<<<< HEAD
 .cart-items {
     display: flex;
     align-items: start;
     gap: 30px;
 }
 
+=======
+>>>>>>> f6be8f88bf6fe377bdb87cd4ec4e9764f32bc5b0
 .cart > h1 {
     margin: 20px 0;
 }
@@ -267,6 +270,7 @@
     list-style-type: none;
     border-radius: 10px;
     overflow: hidden;
+<<<<<<< HEAD
 
     box-shadow: 10px 10px 20px -15px #323232;
     transition: box-shadow 0.3s ease-in;
@@ -274,6 +278,8 @@
 
 .cart-products:hover {
     box-shadow: 10px 10px 19px -12px #323232;
+=======
+>>>>>>> f6be8f88bf6fe377bdb87cd4ec4e9764f32bc5b0
 }
 
 .cart-product {
