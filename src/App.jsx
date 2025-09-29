@@ -17,11 +17,17 @@ function App() {
     });
   }
 
+  function removeFromCart(productId) {
+    const cart = {...shoppingCart};
+    delete cart[productId];
+    setShoppingCart(cart);
+  }
+
   return (
     <>
       <Nav numProducts={Object.keys(shoppingCart).length} />
 			<section className="main">
-				<Outlet context={[products, randomProduct, shoppingCart, updateShoppingCart]} />
+				<Outlet context={[products, randomProduct, shoppingCart, updateShoppingCart, removeFromCart]} />
 			</section>
 			<Footer />
     </>

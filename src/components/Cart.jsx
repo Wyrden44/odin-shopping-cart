@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getProduct, useProduct } from "../fetcher";
 
 export default function Cart() {
-    const [, , shoppingCart, udpateShoppingCart] = useOutletContext();
+    const [, , shoppingCart, udpateShoppingCart, deleteFromCart] = useOutletContext();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -29,7 +29,15 @@ export default function Cart() {
 
     }, [shoppingCart]);
 
-    console.log(shoppingCart, products)
+    if (Object.keys(shoppingCart).length == 0) {
+        return (
+            <>
+                <div className="cart">
+                    <h2 className="empty-cart-message">Cart is empty!</h2>
+                </div>
+            </>
+        )
+    }
     
     return (
         <div className="cart">
@@ -38,7 +46,7 @@ export default function Cart() {
                 <ul className="cart-products">
                     {Object.keys(shoppingCart).map((productId) => {
                         return <li className="list-cart-product" key={productId}>
-                            <CartProduct product={products[productId]} amount={shoppingCart[productId]} onChange={(newAmount) => udpateShoppingCart(productId, newAmount)} />
+                            <CartProduct product={products[productId]} amount={shoppingCart[productId]} onChange={(newAmount) => udpateShoppingCart(productId, newAmount)} onRemoveClick={() => deleteFromCart(productId)}/>
                         </li>
                     })}
                 </ul>
