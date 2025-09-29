@@ -3,14 +3,17 @@ import CartProduct from "./products/CartProduct";
 
 export default function Cart() {
     const [, , shoppingCart, udpateShoppingCart] = useOutletContext();
-
-    console.log("CART:", shoppingCart);
     
     return (
         <div className="cart">
-            {Object.keys(shoppingCart).map((productId) => {
-                return <CartProduct productId={productId} amount={shoppingCart[productId]} onChange={(newAmount) => udpateShoppingCart(productId, newAmount)} key={productId} />
-            })}
+            <h1>Cart</h1>
+            <ul className="cart-products">
+                {Object.keys(shoppingCart).map((productId) => {
+                    return <li className="list-cart-product" key={productId}>
+                        <CartProduct productId={productId} amount={shoppingCart[productId]} onChange={(newAmount) => udpateShoppingCart(productId, newAmount)} />
+                    </li>
+                })}
+            </ul>
         </div>
     );
 }
