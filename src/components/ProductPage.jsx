@@ -1,19 +1,10 @@
-import { Form, redirect, useLoaderData, useNavigate, useOutletContext } from "react-router-dom";
+import { useLoaderData, useNavigate, useOutletContext } from "react-router-dom";
 import { getProduct } from "../fetcher";
-import ProductCard from "./products/ProductCard";
-import { getSingleProduct } from "../mockDataLoader";
 import { useState } from "react";
 
 export async function loader({ params }) {
     const product = await getProduct(params.productId);
     return { product };
-}
-
-export async function addToCart({ request, params }) {
-    const formData = await request.formData();
-    const updates = Object.fromEntries(formData);
-    console.log("u2", updates)
-    await addProductToCart(params.productId, updates.amount);
 }
 
 export default function ProductPage() {

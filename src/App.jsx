@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useProducts } from './fetcher';
 
 const url = "https://fakestoreapi.com/products";

@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { useProduct } from "../../fetcher"
 
 export default function CartProduct({ product, amount, onChange, onRemoveClick }) {
     const navigate = useNavigate();

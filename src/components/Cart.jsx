@@ -1,7 +1,7 @@
 import { useOutletContext } from "react-router-dom"
 import CartProduct from "./products/CartProduct";
 import { useEffect, useState } from "react";
-import { getProduct, useProduct } from "../fetcher";
+import { getProduct } from "../fetcher";
 
 export default function Cart() {
     const [, , shoppingCart, udpateShoppingCart, deleteFromCart] = useOutletContext();

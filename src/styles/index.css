@@ -412,7 +412,14 @@
 
 /* start product page */
 
+.product-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .back-to-shop {
+    align-self: start;
     font-size: 2rem;
     background: transparent;
     border: none;
@@ -428,6 +435,7 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    max-width: 1500px;
 }
 
 .product-images {

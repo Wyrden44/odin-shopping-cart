@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react"
-import { loadProducts } from "../mockDataLoader";
 import ProductCard from "./products/ProductCard";
 import { useOutletContext } from "react-router-dom";
 

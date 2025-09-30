@@ -9,8 +9,7 @@ import App from './App.jsx'
 import Shop from './components/Shop.jsx';
 import Home from './components/Home.jsx';
 import Cart from './components/Cart.jsx';
-import ProductPage, { addToCart, loader as productLoader } from "./components/ProductPage.jsx";
-import { getProduct } from './fetcher.js';
+import ProductPage, { loader as productLoader } from "./components/ProductPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +32,6 @@ const router = createBrowserRouter([
         path: "product/:productId",
         element: <ProductPage />,
         loader: productLoader,
-        action: addToCart,
       },
     ]
   },
