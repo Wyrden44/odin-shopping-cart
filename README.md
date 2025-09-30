@@ -1,9 +1,14 @@
 # odin-shopping-cart
 ## Odin - Project 16: Shopping Cart
 
+Live Demo: https://wyrdenshoppingcart.netlify.app/
+
 This is a fully fledged demo store where you browse products and put them into a shopping cart.
 
 This project is for practicing Client-side Rendering with React Router, fetching data in React, styling React applications and React testing.
+
+![alt text](https://github.com/Wyrden44/odin-shopping-cart/blob/public/demoImages/cart.png?raw=true)
+![alt text](https://github.com/Wyrden44/odin-shopping-cart/blob/public/demoImages/shop.png?raw=true)
 
 ## General Info
 Date: 19.09.25
