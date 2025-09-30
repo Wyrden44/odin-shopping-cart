@@ -7,8 +7,8 @@ This is a fully fledged demo store where you browse products and put them into a
 
 This project is for practicing Client-side Rendering with React Router, fetching data in React, styling React applications and React testing.
 
-![cart](https://github.com/Wyrden44/odin-shopping-cart/public/demoImages/cart.png)
-![shop](https://github.com/Wyrden44/odin-shopping-cart/public/demoImages/shop.png)
+![cart](https://github.com/Wyrden44/odin-shopping-cart/blob/main/public/demoImages/cart.png)
+![shop](https://github.com/Wyrden44/odin-shopping-cart/blob/main/public/demoImages/shop.png)
 
 ## General Info
 Date: 19.09.25
