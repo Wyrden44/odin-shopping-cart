@@ -5,7 +5,7 @@ export default function Nav({ numProducts }) {
         <nav className="nav">
             <div className="logo"></div>
             <ul className="links">
-                <li><Link to="home">Home</Link></li>
+                <li><Link to="/">Home</Link></li>
                 <li><Link to="shop">Shop</Link></li>
             </ul>
             <div className="shopping-cart">
