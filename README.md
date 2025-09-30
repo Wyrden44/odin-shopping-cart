@@ -10,9 +10,9 @@ Date: 19.09.25
 
 Hours Working per Day: 2
 
-Finish: {date}
+Finish: 30.09.25
 
-Hours Worked: {hw}
+Hours Worked: 12
 
 ## Progress
 ### Progress on Foundations Course: 

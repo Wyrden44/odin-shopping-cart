@@ -61,7 +61,7 @@ export default function Cart() {
                     <div className="pricing">
                         <div className="pricing-section">
                             <p>Total:</p>
-                            <p>{Object.values(products).reduce((prev, product) => prev + Math.round(product.price * shoppingCart[product.id] * 100) / 100, 0)}$</p>
+                            <p>{Object.values(products).reduce((prev, product) => Math.round((prev + product.price * shoppingCart[product.id]) * 100) / 100, 0)}$</p>
                         </div>
                         <button className="checkout-button">Checkout</button>
                     </div>
